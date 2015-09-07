@@ -411,7 +411,7 @@
             this.pnlInfo.Controls.Add(this.lbldescrizioneinformazioni);
             this.pnlInfo.Controls.Add(this.label1);
             this.pnlInfo.Controls.Add(this.button1);
-            this.pnlInfo.Location = new System.Drawing.Point(0, 123);
+            this.pnlInfo.Location = new System.Drawing.Point(0, 122);
             this.pnlInfo.Name = "pnlInfo";
             this.pnlInfo.Size = new System.Drawing.Size(400, 250);
             this.pnlInfo.TabIndex = 13;
