@@ -839,5 +839,22 @@ namespace ADBCrk
         {
             pnlHOW.Visible = false;
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            pnlTermini.Visible = false;
+        }
+
+        private void terminiECondizioniToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlTermini.Visible = true;
+
+            lblTermini.Text = "ADBcrk è un proramma creato a scopo informativo e illustrativo.\nogni utlizzo e distrubuzione non autorizzata è vietata. Il programma\nHa accesso a dati interni al PC e ne fa suo utilizzo, eseguendolo si\naccettano le condizioni di utilizzo automaticamente.\nIl programma ha l'accesso ad internet una volta eseguito per verificare\nautonomamente nuove versioni/aggiornamenti da installare se rilasciati.\n\nPer Bug, errori, o richieste: fabio@chiararni.it\nI METODI DESCRITTI IN QUESTO PROGRAMMA E IL SUO FUNZIONAMENTO \nSONO SOLO A SCOPOINFORMATIVO.NON MI ASSUMO RESPONSABILITÀ \nSUL VOSTRO UTILIZZO E L'UTILIZZO DI QUESTO PROGRAMMA.\n Xiryl Ⓒ";
+        }
+
+        private void chiudiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

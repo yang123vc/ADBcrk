@@ -67,11 +67,16 @@
             this.lblHOWTO = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.pnlTermini = new System.Windows.Forms.Panel();
+            this.lblTermini = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.statusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.pnlInfo.SuspendLayout();
             this.pnlHOW.SuspendLayout();
+            this.pnlTermini.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_AI
@@ -151,6 +156,7 @@
             this.terminiECondizioniToolStripMenuItem.Name = "terminiECondizioniToolStripMenuItem";
             this.terminiECondizioniToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.terminiECondizioniToolStripMenuItem.Text = "Termini e Condizioni";
+            this.terminiECondizioniToolStripMenuItem.Click += new System.EventHandler(this.terminiECondizioniToolStripMenuItem_Click);
             // 
             // infoToolStripMenuItem1
             // 
@@ -164,6 +170,7 @@
             this.chiudiToolStripMenuItem.Name = "chiudiToolStripMenuItem";
             this.chiudiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.chiudiToolStripMenuItem.Text = "Chiudi";
+            this.chiudiToolStripMenuItem.Click += new System.EventHandler(this.chiudiToolStripMenuItem_Click);
             // 
             // btn_AE
             // 
@@ -537,11 +544,59 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // pnlTermini
+            // 
+            this.pnlTermini.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pnlTermini.Controls.Add(this.lblTermini);
+            this.pnlTermini.Controls.Add(this.label4);
+            this.pnlTermini.Controls.Add(this.button3);
+            this.pnlTermini.Location = new System.Drawing.Point(-1, 86);
+            this.pnlTermini.Name = "pnlTermini";
+            this.pnlTermini.Size = new System.Drawing.Size(400, 250);
+            this.pnlTermini.TabIndex = 15;
+            this.pnlTermini.Visible = false;
+            // 
+            // lblTermini
+            // 
+            this.lblTermini.AutoSize = true;
+            this.lblTermini.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblTermini.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F);
+            this.lblTermini.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblTermini.Location = new System.Drawing.Point(3, 45);
+            this.lblTermini.Name = "lblTermini";
+            this.lblTermini.Size = new System.Drawing.Size(35, 13);
+            this.lblTermini.TabIndex = 2;
+            this.lblTermini.Text = "label2";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Location = new System.Drawing.Point(29, 21);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(194, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "TERMINI E CONDIZIONI DI UTILIZZO";
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button3.Location = new System.Drawing.Point(344, 7);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(47, 23);
+            this.button3.TabIndex = 0;
+            this.button3.Text = "chiudi";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(400, 472);
+            this.Controls.Add(this.pnlTermini);
             this.Controls.Add(this.pnlHOW);
             this.Controls.Add(this.pnlInfo);
             this.Controls.Add(this.groupBox1);
@@ -562,6 +617,7 @@
             this.Controls.Add(this.prBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
+            this.Text = "ADBcrk   |   V 0.3   Beta";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
@@ -573,6 +629,8 @@
             this.pnlInfo.PerformLayout();
             this.pnlHOW.ResumeLayout(false);
             this.pnlHOW.PerformLayout();
+            this.pnlTermini.ResumeLayout(false);
+            this.pnlTermini.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -618,6 +676,10 @@
         private System.Windows.Forms.Label lblHOWTO;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel pnlTermini;
+        private System.Windows.Forms.Label lblTermini;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button3;
     }
 }
 
