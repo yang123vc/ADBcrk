@@ -550,7 +550,7 @@
             this.pnlTermini.Controls.Add(this.lblTermini);
             this.pnlTermini.Controls.Add(this.label4);
             this.pnlTermini.Controls.Add(this.button3);
-            this.pnlTermini.Location = new System.Drawing.Point(-1, 86);
+            this.pnlTermini.Location = new System.Drawing.Point(0, 86);
             this.pnlTermini.Name = "pnlTermini";
             this.pnlTermini.Size = new System.Drawing.Size(400, 250);
             this.pnlTermini.TabIndex = 15;
@@ -616,6 +616,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.prBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "ADBcrk   |   V 0.3   Beta";
             this.Load += new System.EventHandler(this.Form1_Load);
