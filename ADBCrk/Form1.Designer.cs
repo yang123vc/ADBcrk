@@ -63,10 +63,15 @@
             this.button1 = new System.Windows.Forms.Button();
             this.opzioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eseguiScansioneProgrammiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlHOW = new System.Windows.Forms.Panel();
+            this.lblHOWTO = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.statusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.pnlInfo.SuspendLayout();
+            this.pnlHOW.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_AI
@@ -131,7 +136,7 @@
             this.terminiECondizioniToolStripMenuItem,
             this.infoToolStripMenuItem1});
             this.iNFOToolStripMenuItem.Name = "iNFOToolStripMenuItem";
-            this.iNFOToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.iNFOToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.iNFOToolStripMenuItem.Text = "INFO";
             // 
             // istruzioniToolStripMenuItem
@@ -152,11 +157,12 @@
             this.infoToolStripMenuItem1.Name = "infoToolStripMenuItem1";
             this.infoToolStripMenuItem1.Size = new System.Drawing.Size(183, 22);
             this.infoToolStripMenuItem1.Text = "Info";
+            this.infoToolStripMenuItem1.Click += new System.EventHandler(this.infoToolStripMenuItem1_Click);
             // 
             // chiudiToolStripMenuItem
             // 
             this.chiudiToolStripMenuItem.Name = "chiudiToolStripMenuItem";
-            this.chiudiToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.chiudiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.chiudiToolStripMenuItem.Text = "Chiudi";
             // 
             // btn_AE
@@ -480,15 +486,64 @@
             // eseguiScansioneProgrammiToolStripMenuItem
             // 
             this.eseguiScansioneProgrammiToolStripMenuItem.Name = "eseguiScansioneProgrammiToolStripMenuItem";
-            this.eseguiScansioneProgrammiToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
-            this.eseguiScansioneProgrammiToolStripMenuItem.Text = "Esegui scansione programmi";
+            this.eseguiScansioneProgrammiToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.eseguiScansioneProgrammiToolStripMenuItem.Text = "Nuova Scansione";
             this.eseguiScansioneProgrammiToolStripMenuItem.Click += new System.EventHandler(this.eseguiScansioneProgrammiToolStripMenuItem_Click);
+            // 
+            // pnlHOW
+            // 
+            this.pnlHOW.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.pnlHOW.Controls.Add(this.lblHOWTO);
+            this.pnlHOW.Controls.Add(this.label3);
+            this.pnlHOW.Controls.Add(this.button2);
+            this.pnlHOW.Location = new System.Drawing.Point(-1, 106);
+            this.pnlHOW.Name = "pnlHOW";
+            this.pnlHOW.Size = new System.Drawing.Size(400, 250);
+            this.pnlHOW.TabIndex = 14;
+            this.pnlHOW.Visible = false;
+            // 
+            // lblHOWTO
+            // 
+            this.lblHOWTO.AutoSize = true;
+            this.lblHOWTO.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblHOWTO.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F);
+            this.lblHOWTO.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblHOWTO.Location = new System.Drawing.Point(3, 45);
+            this.lblHOWTO.Name = "lblHOWTO";
+            this.lblHOWTO.Size = new System.Drawing.Size(35, 13);
+            this.lblHOWTO.TabIndex = 2;
+            this.lblHOWTO.Text = "label2";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Location = new System.Drawing.Point(29, 21);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "TUTORIAL";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button2.Location = new System.Drawing.Point(344, 7);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(47, 23);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "chiudi";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(400, 472);
+            this.Controls.Add(this.pnlHOW);
+            this.Controls.Add(this.pnlInfo);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_SG);
             this.Controls.Add(this.btn_PL);
@@ -505,7 +560,6 @@
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.prBar);
-            this.Controls.Add(this.pnlInfo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -517,6 +571,8 @@
             this.groupBox1.PerformLayout();
             this.pnlInfo.ResumeLayout(false);
             this.pnlInfo.PerformLayout();
+            this.pnlHOW.ResumeLayout(false);
+            this.pnlHOW.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -558,6 +614,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem opzioniToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eseguiScansioneProgrammiToolStripMenuItem;
+        private System.Windows.Forms.Panel pnlHOW;
+        private System.Windows.Forms.Label lblHOWTO;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button2;
     }
 }
 

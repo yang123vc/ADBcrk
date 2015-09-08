@@ -655,8 +655,9 @@ namespace ADBCrk
 
         private void istruzioniToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            pnlInfo.Visible = true;
-            lbldescrizioneinformazioni.Text = "ADBcrk è un proramma autonomo che patcha il programma adobe selezionato\nesso è in grado di rilevare quali programmi dell'adobe avete installato ed è in\ngrado di effettuare tutte le operazioni di patching autonomamente. Consiglio di \nvedere la sezione TUTORIAL.\n\nIl programma è funzionante con le ultime versioni della adobe, e su un sistema \na 64bit (x64).Eseguendo il prorgamma si accettano automaticamente i termini\ne le condizioni di utilizzo.\n\n\nI METODI DESCRITTI IN QUESTO PROGRAMMA E IL SUO FUNZIONAMENTO \nSONO SOLO A SCOPOINFORMATIVO.NON MI ASSUMO RESPONSABILITÀ \nSUL VOSTRO UTILIZZO E L'UTILIZZO DI QUESTO PROGRAMMA.\n\n Xyril Ⓒ";
+            pnlHOW.Visible = true;
+
+            lblHOWTO.Text = "ADBcrk è un proramma autonomo che patcha il programma adobe selezionato.\n\nIl funzionamento è semplice: una volta avviato effettua una scansione automatica \ndei programmi adobe installati sul PC. Seleziona il programma che vuoi patchare\ne segli dalle opzioni se vuoi tenere un backup o visualizzare il LOG.\n\nIl funzionamento è sempice e automatico. Se il programma non viene abilitato\nnella lista vuol dire che non è stato rilevato. Effettua una nuova scansione da\n\"Opzioni -> nuova scansione\", oppure spunta l'opzione \"Programma non disponibile\"\n\n\n Xiryl Ⓒ";
         }
 
         private void btn_AE_Click(object sender, EventArgs e)
@@ -826,6 +827,17 @@ namespace ADBCrk
         private void eseguiScansioneProgrammiToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LoadADBcrkProgramDetector();
+        }
+
+        private void infoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            pnlInfo.Visible = true;
+            lbldescrizioneinformazioni.Text = "ADBcrk è un proramma autonomo che patcha il programma adobe selezionato\nesso è in grado di rilevare quali programmi dell'adobe avete installato ed è in\ngrado di effettuare tutte le operazioni di patching autonomamente. Consiglio di \nvedere la sezione INFORMAZIONI.\n\nIl programma è funzionante con le ultime versioni della adobe, e su un sistema \na 64bit (x64).Eseguendo il prorgamma si accettano automaticamente i termini\ne le condizioni di utilizzo.\n\n\nI METODI DESCRITTI IN QUESTO PROGRAMMA E IL SUO FUNZIONAMENTO \nSONO SOLO A SCOPOINFORMATIVO.NON MI ASSUMO RESPONSABILITÀ \nSUL VOSTRO UTILIZZO E L'UTILIZZO DI QUESTO PROGRAMMA.\n\n Xiryl Ⓒ";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            pnlHOW.Visible = false;
         }
     }
 }
