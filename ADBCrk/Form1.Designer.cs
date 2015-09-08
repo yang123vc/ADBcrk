@@ -61,6 +61,8 @@
             this.lbldescrizioneinformazioni = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.opzioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eseguiScansioneProgrammiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -104,7 +106,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.opzioniToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(400, 24);
@@ -394,6 +397,7 @@
             // chk_ProgrammaNonDisponibile
             // 
             this.chk_ProgrammaNonDisponibile.AutoSize = true;
+            this.chk_ProgrammaNonDisponibile.Enabled = false;
             this.chk_ProgrammaNonDisponibile.Location = new System.Drawing.Point(9, 99);
             this.chk_ProgrammaNonDisponibile.Name = "chk_ProgrammaNonDisponibile";
             this.chk_ProgrammaNonDisponibile.Size = new System.Drawing.Size(152, 17);
@@ -464,6 +468,21 @@
             this.button1.Text = "chiudi";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // opzioniToolStripMenuItem
+            // 
+            this.opzioniToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eseguiScansioneProgrammiToolStripMenuItem});
+            this.opzioniToolStripMenuItem.Name = "opzioniToolStripMenuItem";
+            this.opzioniToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.opzioniToolStripMenuItem.Text = "Opzioni";
+            // 
+            // eseguiScansioneProgrammiToolStripMenuItem
+            // 
+            this.eseguiScansioneProgrammiToolStripMenuItem.Name = "eseguiScansioneProgrammiToolStripMenuItem";
+            this.eseguiScansioneProgrammiToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.eseguiScansioneProgrammiToolStripMenuItem.Text = "Esegui scansione programmi";
+            this.eseguiScansioneProgrammiToolStripMenuItem.Click += new System.EventHandler(this.eseguiScansioneProgrammiToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -537,6 +556,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lbldescrizioneinformazioni;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem opzioniToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eseguiScansioneProgrammiToolStripMenuItem;
     }
 }
 

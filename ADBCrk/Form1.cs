@@ -45,10 +45,7 @@ namespace ADBCrk
 
             LoadADBcrkProgramDetector();
 
-            System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
-            ToolTip1.SetToolTip(this.btn_PS, "Photoshop CC");
-            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
-            ToolTip1.SetToolTip(this.btn_AE, "After Effects CC");
+            LoadInfoButton();
         }
 
         //*************************************************************************************************************************
@@ -586,6 +583,37 @@ namespace ADBCrk
 
         //*************************************************************************************************************************
 
+        private void LoadInfoButton()
+        {
+            System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
+            ToolTip1.SetToolTip(this.btn_PS, "Photoshop CC");
+            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
+            ToolTip1.SetToolTip(this.btn_AE, "After Effects CC");
+            System.Windows.Forms.ToolTip ToolTip3 = new System.Windows.Forms.ToolTip();
+            ToolTip1.SetToolTip(this.btn_AI, "Illustrator CC");
+            System.Windows.Forms.ToolTip ToolTip4 = new System.Windows.Forms.ToolTip();
+            ToolTip1.SetToolTip(this.btn_DW, "DreamWare CC");
+            System.Windows.Forms.ToolTip ToolTip5 = new System.Windows.Forms.ToolTip();
+            ToolTip1.SetToolTip(this.btn_AU, "Audition CC");
+            System.Windows.Forms.ToolTip ToolTip6 = new System.Windows.Forms.ToolTip();
+            ToolTip1.SetToolTip(this.btn_PL, "Prelude CC");
+            System.Windows.Forms.ToolTip ToolTip7 = new System.Windows.Forms.ToolTip();
+            ToolTip1.SetToolTip(this.btn_ID, "InDesign CC");
+            System.Windows.Forms.ToolTip ToolTip8 = new System.Windows.Forms.ToolTip();
+            ToolTip1.SetToolTip(this.btn_LR, "Lightroom CC");
+            System.Windows.Forms.ToolTip ToolTip9 = new System.Windows.Forms.ToolTip();
+            ToolTip1.SetToolTip(this.btn_MU, "Muse CC");
+            System.Windows.Forms.ToolTip ToolTip10 = new System.Windows.Forms.ToolTip();
+            ToolTip1.SetToolTip(this.btn_SG, "Speedgrade CC");
+            System.Windows.Forms.ToolTip ToolTip11 = new System.Windows.Forms.ToolTip();
+            ToolTip1.SetToolTip(this.btn_PR, "Premiere CC");
+            System.Windows.Forms.ToolTip ToolTip12 = new System.Windows.Forms.ToolTip();
+            ToolTip1.SetToolTip(this.btn_FL, "FlashPlayer CC");
+
+        }
+
+        //*************************************************************************************************************************
+
         private string AssegnaDLL(string program)
         {
             if      (program == "PS")
@@ -793,6 +821,11 @@ namespace ADBCrk
         private void chk_VisualizzaLOG_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void eseguiScansioneProgrammiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadADBcrkProgramDetector();
         }
     }
 }
