@@ -360,8 +360,17 @@ namespace ADBCrk
 
         private void btn_PS_Click(object sender, EventArgs e)
         {
-            prBar.Value = 10;
-            Crack("PS");
+            DialogResult result = MessageBox.Show("Hai selezionato Photoshop CC\nConfermi?", "INFO", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                prBar.Value = 10;
+                Crack("PS");
+            }
+            else if (result == DialogResult.No)
+            {
+                //CANCEL
+            }
+
         }
 
         //*************************************************************************************************************************
@@ -435,7 +444,7 @@ namespace ADBCrk
             if      (program == "PS")
                 return load.PhotoshopPath.Remove(load.PhotoshopPath.Length-string.Format("Photoshop.exe").Length, string.Format("Photoshop.exe").Length);
             else if (program == "AE")
-                return load.PhotoshopPath.Remove(load.PhotoshopPath.Length - string.Format("AfterFX.exe").Length, string.Format("AfterFX.exe").Length);
+                return load.AfterEffectsPath.Remove(load.AfterEffectsPath.Length - string.Format("AfterFX.exe").Length, string.Format("AfterFX.exe").Length);
             else
                 return "";
         }
@@ -474,6 +483,146 @@ namespace ADBCrk
             {
                 prBar.Value = 10;
                 Crack("AE");
+            }
+            else if (result == DialogResult.No)
+            {
+                //CANCEL
+            }
+        }
+
+        private void btn_DW_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Hai selezionato DreamWare CC\nConfermi?", "INFO", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                prBar.Value = 10;
+                Crack("DW");
+            }
+            else if (result == DialogResult.No)
+            {
+                //CANCEL
+            }
+        }
+
+        private void btn_AI_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Hai selezionato Illustrator CC\nConfermi?", "INFO", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                prBar.Value = 10;
+                Crack("AI");
+            }
+            else if (result == DialogResult.No)
+            {
+                //CANCEL
+            }
+        }
+
+        private void btn_AU_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Hai selezionato Audition CC\nConfermi?", "INFO", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                prBar.Value = 10;
+                Crack("AU");
+            }
+            else if (result == DialogResult.No)
+            {
+                //CANCEL
+            }
+        }
+
+        private void btn_PL_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Hai selezionato Prelude CC\nConfermi?", "INFO", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                prBar.Value = 10;
+                Crack("PL");
+            }
+            else if (result == DialogResult.No)
+            {
+                //CANCEL
+            }
+        }
+
+        private void btn_ID_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Hai selezionato In Design CC\nConfermi?", "INFO", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                prBar.Value = 10;
+                Crack("ID");
+            }
+            else if (result == DialogResult.No)
+            {
+                //CANCEL
+            }
+        }
+
+        private void btn_LR_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Hai selezionato Lightroom CC\nConfermi?", "INFO", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                prBar.Value = 10;
+                Crack("LR");
+            }
+            else if (result == DialogResult.No)
+            {
+                //CANCEL
+            }
+        }
+
+        private void btn_MU_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Hai selezionato Muse CC\nConfermi?", "INFO", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                prBar.Value = 10;
+                Crack("MU");
+            }
+            else if (result == DialogResult.No)
+            {
+                //CANCEL
+            }
+        }
+
+        private void btn_SG_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Hai selezionato Speedgrade CC\nConfermi?", "INFO", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                prBar.Value = 10;
+                Crack("SG");
+            }
+            else if (result == DialogResult.No)
+            {
+                //CANCEL
+            }
+        }
+
+        private void btn_PR_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Hai selezionato Premiere CC\nConfermi?", "INFO", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                prBar.Value = 10;
+                Crack("PR");
+            }
+            else if (result == DialogResult.No)
+            {
+                //CANCEL
+            }
+        }
+
+        private void btn_FL_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Hai selezionato Flash CC\nConfermi?", "INFO", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                prBar.Value = 10;
+                Crack("FL");
             }
             else if (result == DialogResult.No)
             {

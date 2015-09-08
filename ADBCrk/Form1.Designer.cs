@@ -82,6 +82,7 @@
             this.btn_AI.Size = new System.Drawing.Size(78, 75);
             this.btn_AI.TabIndex = 0;
             this.btn_AI.UseVisualStyleBackColor = false;
+            this.btn_AI.Click += new System.EventHandler(this.btn_AI_Click);
             // 
             // statusStrip
             // 
@@ -186,6 +187,7 @@
             this.btn_LR.Size = new System.Drawing.Size(78, 75);
             this.btn_LR.TabIndex = 4;
             this.btn_LR.UseVisualStyleBackColor = false;
+            this.btn_LR.Click += new System.EventHandler(this.btn_LR_Click);
             // 
             // btn_AU
             // 
@@ -202,6 +204,7 @@
             this.btn_AU.Size = new System.Drawing.Size(78, 75);
             this.btn_AU.TabIndex = 4;
             this.btn_AU.UseVisualStyleBackColor = false;
+            this.btn_AU.Click += new System.EventHandler(this.btn_AU_Click);
             // 
             // btn_ID
             // 
@@ -218,6 +221,7 @@
             this.btn_ID.Size = new System.Drawing.Size(78, 75);
             this.btn_ID.TabIndex = 4;
             this.btn_ID.UseVisualStyleBackColor = false;
+            this.btn_ID.Click += new System.EventHandler(this.btn_ID_Click);
             // 
             // btn_DW
             // 
@@ -234,6 +238,7 @@
             this.btn_DW.Size = new System.Drawing.Size(78, 75);
             this.btn_DW.TabIndex = 4;
             this.btn_DW.UseVisualStyleBackColor = false;
+            this.btn_DW.Click += new System.EventHandler(this.btn_DW_Click);
             // 
             // btn_MU
             // 
@@ -250,6 +255,7 @@
             this.btn_MU.Size = new System.Drawing.Size(78, 75);
             this.btn_MU.TabIndex = 4;
             this.btn_MU.UseVisualStyleBackColor = false;
+            this.btn_MU.Click += new System.EventHandler(this.btn_MU_Click);
             // 
             // btn_FL
             // 
@@ -266,6 +272,7 @@
             this.btn_FL.Size = new System.Drawing.Size(78, 75);
             this.btn_FL.TabIndex = 4;
             this.btn_FL.UseVisualStyleBackColor = false;
+            this.btn_FL.Click += new System.EventHandler(this.btn_FL_Click);
             // 
             // btn_PL
             // 
@@ -282,6 +289,7 @@
             this.btn_PL.Size = new System.Drawing.Size(78, 75);
             this.btn_PL.TabIndex = 5;
             this.btn_PL.UseVisualStyleBackColor = false;
+            this.btn_PL.Click += new System.EventHandler(this.btn_PL_Click);
             // 
             // btn_PR
             // 
@@ -298,6 +306,7 @@
             this.btn_PR.Size = new System.Drawing.Size(78, 75);
             this.btn_PR.TabIndex = 7;
             this.btn_PR.UseVisualStyleBackColor = false;
+            this.btn_PR.Click += new System.EventHandler(this.btn_PR_Click);
             // 
             // btn_PS
             // 
@@ -331,6 +340,7 @@
             this.btn_SG.Size = new System.Drawing.Size(78, 75);
             this.btn_SG.TabIndex = 9;
             this.btn_SG.UseVisualStyleBackColor = false;
+            this.btn_SG.Click += new System.EventHandler(this.btn_SG_Click);
             // 
             // groupBox1
             // 

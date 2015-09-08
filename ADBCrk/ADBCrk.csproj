@@ -89,6 +89,36 @@
   <ItemGroup>
     <EmbeddedResource Include="amtlibAE.dll" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="amtlibAI.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="amtlibAU.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="amtlibDW.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="amtlibMU.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="amtlibFL.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="amtlibID.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="amtlibLR.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="amtlibPL.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="amtlibPR.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="amtlibSG.dll" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
