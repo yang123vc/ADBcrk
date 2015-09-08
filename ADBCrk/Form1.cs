@@ -41,6 +41,11 @@ namespace ADBCrk
             lbl_Descrizione.Text = "Seleziona il programma che vuoi craccare, se non è disponibile\nspunta la casella \"programma non disponibile\", e selezionalo \nper modificarne il percorso.";
 
             LoadADBcrkProgramDetector();
+
+            System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
+            ToolTip1.SetToolTip(this.btn_PS, "Photoshop CC");
+            System.Windows.Forms.ToolTip ToolTip2 = new System.Windows.Forms.ToolTip();
+            ToolTip1.SetToolTip(this.btn_AE, "After Effects CC");
         }
 
         //*************************************************************************************************************************
@@ -372,9 +377,9 @@ namespace ADBCrk
                 string thisPath = AssegnaPath(program);
                 string thisDLL = AssegnaDLL(program);
                 prBar.Value = 20;
-                Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ADBcrk_Backups");
                 try
                 {
+                    Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ADBcrk_Backups");     
                     File.Move(thisPath + @"amtlib.dll", Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ADBcrk_Backups\\amtlib.dll");
                 }
                 catch
@@ -386,10 +391,9 @@ namespace ADBCrk
                 prBar.Value = 60;
                 List<string> ls = new List<string>();
                 ls.Add(thisDLL);
-               // ls[0] = "ambtlib.dll";
                 prBar.Value = 70;
                 ExtractEmbeddedResource(thisPath, "ADBCrk", ls);
-                File.Move(thisPath + @"amtlibPS.dll", thisPath + @"amtlib.dll");
+                File.Move(thisPath + thisDLL, thisPath + @"amtlib.dll");
                 prBar.Value = 90;
             }
             else
@@ -397,18 +401,41 @@ namespace ADBCrk
                 //-----------
                 //NOT CHECKED
                 //-----------
+
+                string thisPath = AssegnaPath(program);
+                string thisDLL = AssegnaDLL(program);
+                prBar.Value = 20;
+                prBar.Value = 40;
+                File.Delete(thisPath + @"amtlib.dll");
+                prBar.Value = 60;
+                List<string> ls = new List<string>();
+                ls.Add(thisDLL);
+                prBar.Value = 70;
+                ExtractEmbeddedResource(thisPath, "ADBCrk", ls);
+                File.Move(thisPath + thisDLL, thisPath + @"amtlib.dll");
+                prBar.Value = 90;
+
             }
 
             prBar.Value = 100;
             lblStato.Text = "PATCH EFFETTUATA. ORA PUOI USARE IL PROGRAMMA.";
+
+            Thread t = new Thread(() =>
+            {
+                System.Threading.Thread.Sleep(3000);
+                prBar.Invoke(new Action( () => prBar.Value = 0));
+            });
+            t.Start();
         }
 
         //*************************************************************************************************************************
 
         private string AssegnaPath(string program)
         {
-            if (program == "PS")
+            if      (program == "PS")
                 return load.PhotoshopPath.Remove(load.PhotoshopPath.Length-string.Format("Photoshop.exe").Length, string.Format("Photoshop.exe").Length);
+            else if (program == "AE")
+                return load.PhotoshopPath.Remove(load.PhotoshopPath.Length - string.Format("AfterFX.exe").Length, string.Format("AfterFX.exe").Length);
             else
                 return "";
         }
@@ -417,8 +444,10 @@ namespace ADBCrk
 
         private string AssegnaDLL(string program)
         {
-            if (program == "PS")
+            if      (program == "PS")
                 return "amtlibPS.dll";
+            else if (program == "AE")
+                return "amtlibAE.dll";
             else
                 return "";
         }
@@ -436,6 +465,20 @@ namespace ADBCrk
         {
             pnlInfo.Visible = true;
             lbldescrizioneinformazioni.Text = "ADBcrk è un proramma autonomo che patcha il programma adobe selezionato\nesso è in grado di rilevare quali programmi dell'adobe avete installato ed è in\ngrado di effettuare tutte le operazioni di patching autonomamente. Consiglio di \nvedere la sezione TUTORIAL.\n\nIl programma è funzionante con le ultime versioni della adobe, e su un sistema \na 64bit (x64).Eseguendo il prorgamma si accettano automaticamente i termini\ne le condizioni di utilizzo.\n\n\nI METODI DESCRITTI IN QUESTO PROGRAMMA E IL SUO FUNZIONAMENTO \nSONO SOLO A SCOPOINFORMATIVO.NON MI ASSUMO RESPONSABILITÀ \nSUL VOSTRO UTILIZZO E L'UTILIZZO DI QUESTO PROGRAMMA.\n\n Xyril Ⓒ";
+        }
+
+        private void btn_AE_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Hai selezionato After Effects CC\nConfermi?", "INFO", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                prBar.Value = 10;
+                Crack("AE");
+            }
+            else if (result == DialogResult.No)
+            {
+                //CANCEL
+            }
         }
     }
 }
