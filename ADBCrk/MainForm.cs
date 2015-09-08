@@ -19,7 +19,7 @@ using System.Reflection;
 namespace ADBCrk
 {
 
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         [DllImport("Kernel32.dll")]
         static extern Boolean AllocConsole();
@@ -31,7 +31,7 @@ namespace ADBCrk
         //*************************************************************************************************************************
 
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
@@ -46,6 +46,8 @@ namespace ADBCrk
             LoadADBcrkProgramDetector();
 
             LoadInfoButton();
+
+            
         }
 
         //*************************************************************************************************************************
@@ -855,6 +857,10 @@ namespace ADBCrk
         private void chiudiToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
         }
     }
 }

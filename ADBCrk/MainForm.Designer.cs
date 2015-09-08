@@ -1,6 +1,6 @@
 ﻿namespace ADBCrk
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Variabile di progettazione necessaria.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.btn_AI = new System.Windows.Forms.Button();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.lblStato = new System.Windows.Forms.ToolStripStatusLabel();
@@ -39,6 +39,8 @@
             this.terminiECondizioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.chiudiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.opzioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eseguiScansioneProgrammiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_AE = new System.Windows.Forms.Button();
             this.btn_LR = new System.Windows.Forms.Button();
             this.btn_AU = new System.Windows.Forms.Button();
@@ -61,8 +63,6 @@
             this.lbldescrizioneinformazioni = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.opzioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eseguiScansioneProgrammiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlHOW = new System.Windows.Forms.Panel();
             this.lblHOWTO = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -141,7 +141,7 @@
             this.terminiECondizioniToolStripMenuItem,
             this.infoToolStripMenuItem1});
             this.iNFOToolStripMenuItem.Name = "iNFOToolStripMenuItem";
-            this.iNFOToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.iNFOToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.iNFOToolStripMenuItem.Text = "INFO";
             // 
             // istruzioniToolStripMenuItem
@@ -168,9 +168,24 @@
             // chiudiToolStripMenuItem
             // 
             this.chiudiToolStripMenuItem.Name = "chiudiToolStripMenuItem";
-            this.chiudiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.chiudiToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.chiudiToolStripMenuItem.Text = "Chiudi";
             this.chiudiToolStripMenuItem.Click += new System.EventHandler(this.chiudiToolStripMenuItem_Click);
+            // 
+            // opzioniToolStripMenuItem
+            // 
+            this.opzioniToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eseguiScansioneProgrammiToolStripMenuItem});
+            this.opzioniToolStripMenuItem.Name = "opzioniToolStripMenuItem";
+            this.opzioniToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.opzioniToolStripMenuItem.Text = "Opzioni";
+            // 
+            // eseguiScansioneProgrammiToolStripMenuItem
+            // 
+            this.eseguiScansioneProgrammiToolStripMenuItem.Name = "eseguiScansioneProgrammiToolStripMenuItem";
+            this.eseguiScansioneProgrammiToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.eseguiScansioneProgrammiToolStripMenuItem.Text = "Nuova Scansione";
+            this.eseguiScansioneProgrammiToolStripMenuItem.Click += new System.EventHandler(this.eseguiScansioneProgrammiToolStripMenuItem_Click);
             // 
             // btn_AE
             // 
@@ -482,21 +497,6 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // opzioniToolStripMenuItem
-            // 
-            this.opzioniToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.eseguiScansioneProgrammiToolStripMenuItem});
-            this.opzioniToolStripMenuItem.Name = "opzioniToolStripMenuItem";
-            this.opzioniToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.opzioniToolStripMenuItem.Text = "Opzioni";
-            // 
-            // eseguiScansioneProgrammiToolStripMenuItem
-            // 
-            this.eseguiScansioneProgrammiToolStripMenuItem.Name = "eseguiScansioneProgrammiToolStripMenuItem";
-            this.eseguiScansioneProgrammiToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.eseguiScansioneProgrammiToolStripMenuItem.Text = "Nuova Scansione";
-            this.eseguiScansioneProgrammiToolStripMenuItem.Click += new System.EventHandler(this.eseguiScansioneProgrammiToolStripMenuItem_Click);
-            // 
             // pnlHOW
             // 
             this.pnlHOW.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -591,7 +591,7 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -617,8 +617,9 @@
             this.Controls.Add(this.prBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "ADBcrk   |   V 0.3   Beta";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
