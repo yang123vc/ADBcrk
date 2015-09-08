@@ -132,6 +132,12 @@ namespace ADBCrk
             }
             else
                 btn_FL.Enabled = false;
+            if (load.IllustratorPath != "NOT FOUND" && load.FlashPlayerPath != "ERROR")
+            {
+                btn_AI.Enabled = true;
+            }
+            else
+                btn_AI.Enabled = false;
         }
 
         //*************************************************************************************************************************
@@ -442,9 +448,29 @@ namespace ADBCrk
         private string AssegnaPath(string program)
         {
             if      (program == "PS")
-                return load.PhotoshopPath.Remove(load.PhotoshopPath.Length-string.Format("Photoshop.exe").Length, string.Format("Photoshop.exe").Length);
-            else if (program == "AE")
-                return load.AfterEffectsPath.Remove(load.AfterEffectsPath.Length - string.Format("AfterFX.exe").Length, string.Format("AfterFX.exe").Length);
+                return load.PhotoshopPath.Remove   (load.PhotoshopPath.Length -    string.Format("Photoshop.exe").Length,   string.Format("Photoshop.exe").Length);
+            else if (program == "AE")                                                                                       
+                return load.AfterEffectsPath.Remove(load.AfterEffectsPath.Length - string.Format("AfterFX.exe").Length,     string.Format("AfterFX.exe").Length);
+            else if (program == "DW")
+                return load.DreamWarePath.Remove   (load.DreamWarePath.Length -    string.Format("Dreamweaver.exe").Length, string.Format("Dreamweaver.exe").Length);
+            else if (program == "AI")
+                return load.IllustratorPath.Remove(load.IllustratorPath.Length - string.Format("Illustrator.exe").Length, string.Format("Illustrator.exe").Length);
+            else if (program == "AU")
+                return load.AuditionPath.Remove    (load.AuditionPath.Length -     string.Format("Audition.exe").Length,    string.Format("Audition.exe").Length);
+            else if (program == "PL")                                                                                      
+                return load.PreludePath.Remove     (load.PreludePath.Length -      string.Format("Prelude.exe").Length,     string.Format("Prelude.exe").Length);
+            else if (program == "ID")                                                                                      
+                return load.InDesignPath.Remove    (load.InDesignPath.Length -     string.Format("InDesign.exe").Length,    string.Format("InDesign.exe").Length);
+            else if (program == "LR")                                              
+                return load.LightroomPath.Remove   (load.LightroomPath.Length -    string.Format("Lightroom.exe").Length,   string.Format("Lightroom.exe").Length);
+            else if (program == "MU")                                              
+                return load.MusePath.Remove        (load.MusePath.Length -         string.Format("Muse.exe").Length,        string.Format("Muse.exe").Length);
+            else if (program == "SG")              
+                return load.SpeedgradePath.Remove  (load.SpeedgradePath.Length -   string.Format("Speedgrade.exe").Length,  string.Format("Speedgrade.exe").Length);
+            else if (program == "PR")
+                return load.PremierePath.Remove    (load.PremierePath.Length -     string.Format("Premiere.exe").Length,    string.Format("Premiere.exe").Length);
+            else if (program == "PL")
+                return load.FlashPlayerPath.Remove (load.FlashPlayerPath.Length -  string.Format("FlashPlayer.exe").Length, string.Format("FlashPlayer.exe").Length);
             else
                 return "";
         }
@@ -457,6 +483,26 @@ namespace ADBCrk
                 return "amtlibPS.dll";
             else if (program == "AE")
                 return "amtlibAE.dll";
+            else if (program == "DW")
+                return "amtlibDW.dll";
+            else if (program == "AI")
+                return "amtlibAI.dll";
+            else if (program == "AU")
+                return "amtlibAU.dll";
+            else if (program == "PL")
+                return "amtlibPL.dll";
+            else if (program == "ID")
+                return "amtlibID.dll";
+            else if (program == "LR")
+                return "amtlibLR.dll";
+            else if (program == "MU")
+                return "amtlibMU.dll";
+            else if (program == "SG")
+                return "amtlibSG.dll";
+            else if (program == "PR")
+                return "amtlibPR.dll";
+            else if (program == "PL")
+                return "amtlibPL.dll";
             else
                 return "";
         }
@@ -628,6 +674,11 @@ namespace ADBCrk
             {
                 //CANCEL
             }
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

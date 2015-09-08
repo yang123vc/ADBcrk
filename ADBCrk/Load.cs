@@ -20,6 +20,7 @@ namespace ADBCrk
         public string SpeedgradePath   { get; set; }
         public string PremierePath     { get; set; }
         public string FlashPlayerPath  { get; set; }
+        public string IllustratorPath  { get; set; }
 
         //*************************************************************************************************************************
 
@@ -36,6 +37,7 @@ namespace ADBCrk
             SpeedgradePath   = GetApplicationPath("Speedgrade.exe" );
             PremierePath     = GetApplicationPath("Premiere.exe"   );
             FlashPlayerPath  = GetApplicationPath("FlashPlayer.exe");
+            IllustratorPath  = GetApplicationPath("Illustrator.exe");
         }
 
         //*************************************************************************************************************************
