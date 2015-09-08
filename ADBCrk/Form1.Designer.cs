@@ -366,6 +366,7 @@
             this.chk_VisualizzaLOG.TabIndex = 4;
             this.chk_VisualizzaLOG.Text = "Visualizza LOG";
             this.chk_VisualizzaLOG.UseVisualStyleBackColor = true;
+            this.chk_VisualizzaLOG.CheckedChanged += new System.EventHandler(this.chk_VisualizzaLOG_CheckedChanged);
             // 
             // checkBox3
             // 

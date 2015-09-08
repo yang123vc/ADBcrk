@@ -21,12 +21,15 @@ namespace ADBCrk
 
     public partial class Form1 : Form
     {
+        [DllImport("Kernel32.dll")]
+        static extern Boolean AllocConsole();
 
         Load load;
         readonly int dimFinestraMin = 327;
         bool isClicked = false;
 
         //*************************************************************************************************************************
+
 
         public Form1()
         {
@@ -389,27 +392,90 @@ namespace ADBCrk
                 //CHECKED
                 //-------
 
-                string thisPath = AssegnaPath(program);
-                string thisDLL = AssegnaDLL(program);
-                prBar.Value = 20;
-                try
+                if(chk_VisualizzaLOG.Checked)
                 {
-                    Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ADBcrk_Backups");     
-                    File.Move(thisPath + @"amtlib.dll", Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ADBcrk_Backups\\amtlib.dll");
+                    if (!AllocConsole())
+                    {
+                        MessageBox.Show("Failed");
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.WriteLine("> Assegno Path al programma");
+                        string thisPath = AssegnaPath(program);
+                        Console.WriteLine(thisPath);
+
+                        Console.WriteLine("\n> Assegno DLL al programma");
+                        string thisDLL = AssegnaDLL(program);
+                        Console.WriteLine(thisDLL);
+                        prBar.Value = 20;
+
+                        Console.WriteLine("\n> OPZIONE BACKUP ATTIVA.");
+                        Console.WriteLine("Backup disponibile nei ../../Documents/ADBcrk_Backups");
+                        try
+                        {
+                            Console.WriteLine("\n> New Dir");
+                            Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ADBcrk_Backups");
+                            File.Move(thisPath + @"amtlib.dll", Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ADBcrk_Backups\\amtlib.dll");
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine("\n> Backup completed");
+                            Console.ForegroundColor = ConsoleColor.White;
+                        }
+                        catch
+                        {
+                            //NOTHING
+
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("\n> !!! Backup FAILED !!!!");
+                            Console.ForegroundColor = ConsoleColor.White;
+                        }
+
+                        prBar.Value = 40;
+                        Console.WriteLine("\n> Rimuovo vecchia .dll");
+                        File.Delete(thisPath + @"amtlib.dll");
+                        prBar.Value = 60;
+                        Console.WriteLine("\n> Estraggo nuova .dll");
+                        Console.WriteLine("0%");
+                        Console.WriteLine("..");
+                        Console.WriteLine("...");
+                        Console.WriteLine("...");
+                        Console.WriteLine("....");
+                        Console.WriteLine("100%");
+                        List<string> ls = new List<string>();
+                        ls.Add(thisDLL);
+                        prBar.Value = 70;
+                        ExtractEmbeddedResource(thisPath, "ADBCrk", ls);
+                        File.Move(thisPath + thisDLL, thisPath + @"amtlib.dll");
+                        Console.WriteLine("\n> Installo nuova .dll");
+                        prBar.Value = 90;
+                        Console.WriteLine("...");
+                        Console.WriteLine("\n> FINITO.");
+                    }                 
                 }
-                catch
+                else
                 {
-                    //NOTHING
-                }
-                prBar.Value = 40;
-                File.Delete(thisPath + @"amtlib.dll");
-                prBar.Value = 60;
-                List<string> ls = new List<string>();
-                ls.Add(thisDLL);
-                prBar.Value = 70;
-                ExtractEmbeddedResource(thisPath, "ADBCrk", ls);
-                File.Move(thisPath + thisDLL, thisPath + @"amtlib.dll");
-                prBar.Value = 90;
+                    string thisPath = AssegnaPath(program);
+                    string thisDLL = AssegnaDLL(program);
+                    prBar.Value = 20;
+                    try
+                    {
+                        Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ADBcrk_Backups");
+                        File.Move(thisPath + @"amtlib.dll", Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ADBcrk_Backups\\amtlib.dll");
+                    }
+                    catch
+                    {
+                        //NOTHING
+                    }
+                    prBar.Value = 40;
+                    File.Delete(thisPath + @"amtlib.dll");
+                    prBar.Value = 60;
+                    List<string> ls = new List<string>();
+                    ls.Add(thisDLL);
+                    prBar.Value = 70;
+                    ExtractEmbeddedResource(thisPath, "ADBCrk", ls);
+                    File.Move(thisPath + thisDLL, thisPath + @"amtlib.dll");
+                    prBar.Value = 90;
+                }        
             }
             else
             {
@@ -417,19 +483,62 @@ namespace ADBCrk
                 //NOT CHECKED
                 //-----------
 
-                string thisPath = AssegnaPath(program);
-                string thisDLL = AssegnaDLL(program);
-                prBar.Value = 20;
-                prBar.Value = 40;
-                File.Delete(thisPath + @"amtlib.dll");
-                prBar.Value = 60;
-                List<string> ls = new List<string>();
-                ls.Add(thisDLL);
-                prBar.Value = 70;
-                ExtractEmbeddedResource(thisPath, "ADBCrk", ls);
-                File.Move(thisPath + thisDLL, thisPath + @"amtlib.dll");
-                prBar.Value = 90;
+                if (chk_VisualizzaLOG.Checked)
+                {
+                    if (!AllocConsole())
+                    {
+                        MessageBox.Show("Failed");
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.WriteLine("> Assegno Path al programma");
+                        string thisPath = AssegnaPath(program);
+                        Console.WriteLine(thisPath);
 
+                        Console.WriteLine("\n> Assegno DLL al programma");
+                        string thisDLL = AssegnaDLL(program);
+                        Console.WriteLine(thisDLL);
+                        prBar.Value = 20;
+
+                        Console.WriteLine("\n> OPZIONE BACKUP NON ATTIVA.");
+                        prBar.Value = 40;
+                        Console.WriteLine("\n> Rimuovo vecchia .dll");
+                        File.Delete(thisPath + @"amtlib.dll");
+                        prBar.Value = 60;
+                        Console.WriteLine("\n> Estraggo nuova .dll");
+                        Console.WriteLine("0%");
+                        Console.WriteLine("..");
+                        Console.WriteLine("...");
+                        Console.WriteLine("...");
+                        Console.WriteLine("....");
+                        Console.WriteLine("100%");
+                        List<string> ls = new List<string>();
+                        ls.Add(thisDLL);
+                        prBar.Value = 70;
+                        ExtractEmbeddedResource(thisPath, "ADBCrk", ls);
+                        File.Move(thisPath + thisDLL, thisPath + @"amtlib.dll");
+                        Console.WriteLine("\n> Installo nuova .dll");
+                        prBar.Value = 90;
+                        Console.WriteLine("...");
+                        Console.WriteLine("\n> FINITO.");
+                    }
+                }
+                else
+                {
+                    string thisPath = AssegnaPath(program);
+                    string thisDLL = AssegnaDLL(program);
+                    prBar.Value = 20;
+                    prBar.Value = 40;
+                    File.Delete(thisPath + @"amtlib.dll");
+                    prBar.Value = 60;
+                    List<string> ls = new List<string>();
+                    ls.Add(thisDLL);
+                    prBar.Value = 70;
+                    ExtractEmbeddedResource(thisPath, "ADBCrk", ls);
+                    File.Move(thisPath + thisDLL, thisPath + @"amtlib.dll");
+                    prBar.Value = 90;
+                }
             }
 
             prBar.Value = 100;
@@ -677,6 +786,11 @@ namespace ADBCrk
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void chk_VisualizzaLOG_CheckedChanged(object sender, EventArgs e)
         {
 
         }
