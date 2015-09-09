@@ -416,6 +416,12 @@ namespace ADBCrk
                         string thisPath = AssegnaPath(program);
                         Console.WriteLine(thisPath);
 
+                        if(chk_ProgrammaNonDisponibile.Checked)
+                        {
+                            Console.WriteLine("\n> PATH MANUALE");
+                            thisPath = textBox1.Text + "\\";
+                        }
+
                         Console.WriteLine("\n> Assegno DLL al programma");
                         string thisDLL = AssegnaDLL(program);
                         Console.WriteLine(thisDLL);
@@ -466,6 +472,12 @@ namespace ADBCrk
                 else
                 {
                     string thisPath = AssegnaPath(program);
+
+                    if (chk_ProgrammaNonDisponibile.Checked)
+                    {
+                        thisPath = textBox1.Text + "\\";
+                    }
+
                     string thisDLL = AssegnaDLL(program);
                     prBar.Value = 20;
                     try
@@ -507,6 +519,12 @@ namespace ADBCrk
                         string thisPath = AssegnaPath(program);
                         Console.WriteLine(thisPath);
 
+                        if (chk_ProgrammaNonDisponibile.Checked)
+                        {
+                            Console.WriteLine("\n> PATH MANUALE");
+                            thisPath = textBox1.Text + "\\";
+                        }
+
                         Console.WriteLine("\n> Assegno DLL al programma");
                         string thisDLL = AssegnaDLL(program);
                         Console.WriteLine(thisDLL);
@@ -538,6 +556,12 @@ namespace ADBCrk
                 else
                 {
                     string thisPath = AssegnaPath(program);
+
+                    if (chk_ProgrammaNonDisponibile.Checked)
+                    {
+                        thisPath = textBox1.Text + "\\";
+                    }
+
                     string thisDLL = AssegnaDLL(program);
                     prBar.Value = 20;
                     prBar.Value = 40;
@@ -553,7 +577,14 @@ namespace ADBCrk
             }
 
             prBar.Value = 100;
+            if(chk_ProgrammaNonDisponibile.Checked)
+            {
+                lblStato.BackColor = Color.LightGreen;
+                chk_ProgrammaNonDisponibile.Checked = false;
+            }
+
             lblStato.Text = "PATCH EFFETTUATA. ORA PUOI USARE IL PROGRAMMA.";
+
 
             Thread t = new Thread(() =>
             {

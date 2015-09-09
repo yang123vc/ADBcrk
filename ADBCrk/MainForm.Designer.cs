@@ -461,7 +461,7 @@
             this.pnlInfo.Controls.Add(this.lbldescrizioneinformazioni);
             this.pnlInfo.Controls.Add(this.label1);
             this.pnlInfo.Controls.Add(this.button1);
-            this.pnlInfo.Location = new System.Drawing.Point(0, 188);
+            this.pnlInfo.Location = new System.Drawing.Point(0, 153);
             this.pnlInfo.Name = "pnlInfo";
             this.pnlInfo.Size = new System.Drawing.Size(400, 250);
             this.pnlInfo.TabIndex = 13;
@@ -508,7 +508,7 @@
             this.pnlHOW.Controls.Add(this.lblHOWTO);
             this.pnlHOW.Controls.Add(this.label3);
             this.pnlHOW.Controls.Add(this.button2);
-            this.pnlHOW.Location = new System.Drawing.Point(-1, 172);
+            this.pnlHOW.Location = new System.Drawing.Point(0, 135);
             this.pnlHOW.Name = "pnlHOW";
             this.pnlHOW.Size = new System.Drawing.Size(400, 250);
             this.pnlHOW.TabIndex = 14;
@@ -555,7 +555,7 @@
             this.pnlTermini.Controls.Add(this.lblTermini);
             this.pnlTermini.Controls.Add(this.label4);
             this.pnlTermini.Controls.Add(this.button3);
-            this.pnlTermini.Location = new System.Drawing.Point(0, 152);
+            this.pnlTermini.Location = new System.Drawing.Point(0, 115);
             this.pnlTermini.Name = "pnlTermini";
             this.pnlTermini.Size = new System.Drawing.Size(400, 250);
             this.pnlTermini.TabIndex = 15;
@@ -666,7 +666,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
-            this.Text = "ADBcrk   |   V 0.3   Beta";
+            this.Text = "ADBcrk   |   V 0.4   Beta";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.statusStrip.ResumeLayout(false);
