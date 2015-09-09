@@ -42,6 +42,7 @@ namespace ADBCrk
         {
             lblStato.Text = "Pronto.    Seleziona il programma che vuoi craccare.";
             lbl_Descrizione.Text = "Seleziona il programma che vuoi craccare, se non è disponibile\nspunta la casella \"programma non disponibile\", e selezionalo \nper modificarne il percorso.";
+            label2.Text = "Seleziona il percorso del programma, \nuna volta selezionato clicca sul programma da craccare.";
 
             LoadADBcrkProgramDetector();
 
@@ -286,10 +287,21 @@ namespace ADBCrk
                 btn_SG.Enabled = true;
                 btn_MU.Enabled = true;
 
+                for(int i = 0; i < 82; i++)
+                {
+                    this.Height++;
+                }
+
                // statusStrip.BackColor = Color.LightGreen;
             }
             else
             {
+
+                for (int i = 0; i < 82; i++)
+                {
+                    this.Height--;
+                }
+
                 LoadADBcrkProgramDetector();
 
                 FlatButtonEnabledTRansparent();
@@ -861,6 +873,16 @@ namespace ADBCrk
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DialogResult result = folderBrowserDialog1.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+
+                textBox1.Text =  folderBrowserDialog1.SelectedPath;
+            }
         }
     }
 }

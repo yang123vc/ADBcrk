@@ -66,5 +66,13 @@ namespace ADBCrk
         {
             _dragging = false; 
         }
+
+        private void txtPwd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                button1_Click(sender, e);
+            }
+        }
     }
 }

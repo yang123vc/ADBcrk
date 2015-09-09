@@ -64,6 +64,7 @@
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(100, 20);
             this.txtCode.TabIndex = 2;
+            this.txtCode.Text = "ADBcrk";
             // 
             // txtPwd
             // 
@@ -72,6 +73,8 @@
             this.txtPwd.PasswordChar = '♤';
             this.txtPwd.Size = new System.Drawing.Size(100, 20);
             this.txtPwd.TabIndex = 3;
+            this.txtPwd.Text = "Xiryl";
+            this.txtPwd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPwd_KeyPress);
             // 
             // button1
             // 
