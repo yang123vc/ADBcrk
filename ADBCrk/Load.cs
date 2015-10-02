@@ -54,7 +54,7 @@ namespace ADBCrk
                 else
                     return "NOT FOUND";
             }
-            catch (Exception ex)
+            catch
             {
                 return "ERROR";
             }

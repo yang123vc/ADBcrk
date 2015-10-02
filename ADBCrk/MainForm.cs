@@ -19,7 +19,7 @@ using System.Reflection;
 namespace ADBCrk
 {
 
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         [DllImport("Kernel32.dll")]
         static extern Boolean AllocConsole();
@@ -31,7 +31,7 @@ namespace ADBCrk
         //*************************************************************************************************************************
 
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
@@ -42,10 +42,13 @@ namespace ADBCrk
         {
             lblStato.Text = "Pronto.    Seleziona il programma che vuoi craccare.";
             lbl_Descrizione.Text = "Seleziona il programma che vuoi craccare, se non è disponibile\nspunta la casella \"programma non disponibile\", e selezionalo \nper modificarne il percorso.";
+            label2.Text = "Seleziona il percorso del programma, \nuna volta selezionato clicca sul programma da craccare.";
 
             LoadADBcrkProgramDetector();
 
             LoadInfoButton();
+
+            
         }
 
         //*************************************************************************************************************************
@@ -284,10 +287,21 @@ namespace ADBCrk
                 btn_SG.Enabled = true;
                 btn_MU.Enabled = true;
 
+                for(int i = 0; i < 82; i++)
+                {
+                    this.Height++;
+                }
+
                // statusStrip.BackColor = Color.LightGreen;
             }
             else
             {
+
+                for (int i = 0; i < 82; i++)
+                {
+                    this.Height--;
+                }
+
                 LoadADBcrkProgramDetector();
 
                 FlatButtonEnabledTRansparent();
@@ -402,6 +416,12 @@ namespace ADBCrk
                         string thisPath = AssegnaPath(program);
                         Console.WriteLine(thisPath);
 
+                        if(chk_ProgrammaNonDisponibile.Checked)
+                        {
+                            Console.WriteLine("\n> PATH MANUALE");
+                            thisPath = textBox1.Text + "\\";
+                        }
+
                         Console.WriteLine("\n> Assegno DLL al programma");
                         string thisDLL = AssegnaDLL(program);
                         Console.WriteLine(thisDLL);
@@ -452,6 +472,12 @@ namespace ADBCrk
                 else
                 {
                     string thisPath = AssegnaPath(program);
+
+                    if (chk_ProgrammaNonDisponibile.Checked)
+                    {
+                        thisPath = textBox1.Text + "\\";
+                    }
+
                     string thisDLL = AssegnaDLL(program);
                     prBar.Value = 20;
                     try
@@ -493,6 +519,12 @@ namespace ADBCrk
                         string thisPath = AssegnaPath(program);
                         Console.WriteLine(thisPath);
 
+                        if (chk_ProgrammaNonDisponibile.Checked)
+                        {
+                            Console.WriteLine("\n> PATH MANUALE");
+                            thisPath = textBox1.Text + "\\";
+                        }
+
                         Console.WriteLine("\n> Assegno DLL al programma");
                         string thisDLL = AssegnaDLL(program);
                         Console.WriteLine(thisDLL);
@@ -524,6 +556,12 @@ namespace ADBCrk
                 else
                 {
                     string thisPath = AssegnaPath(program);
+
+                    if (chk_ProgrammaNonDisponibile.Checked)
+                    {
+                        thisPath = textBox1.Text + "\\";
+                    }
+
                     string thisDLL = AssegnaDLL(program);
                     prBar.Value = 20;
                     prBar.Value = 40;
@@ -539,7 +577,14 @@ namespace ADBCrk
             }
 
             prBar.Value = 100;
+            if(chk_ProgrammaNonDisponibile.Checked)
+            {
+                lblStato.BackColor = Color.LightGreen;
+                chk_ProgrammaNonDisponibile.Checked = false;
+            }
+
             lblStato.Text = "PATCH EFFETTUATA. ORA PUOI USARE IL PROGRAMMA.";
+
 
             Thread t = new Thread(() =>
             {
@@ -855,6 +900,20 @@ namespace ADBCrk
         private void chiudiToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DialogResult result = folderBrowserDialog1.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+
+                textBox1.Text =  folderBrowserDialog1.SelectedPath;
+            }
         }
     }
 }
