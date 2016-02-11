@@ -91,7 +91,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.LightBlue;
+            this.label3.BackColor = System.Drawing.Color.Cyan;
             this.label3.Location = new System.Drawing.Point(3, 135);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(255, 13);
@@ -100,7 +100,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.LightBlue;
+            this.panel1.BackColor = System.Drawing.Color.Cyan;
             this.panel1.Location = new System.Drawing.Point(0, 131);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(261, 21);
